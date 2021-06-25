@@ -10,16 +10,14 @@ body {
 }
 
 section {
-    animation: page-load ease 3s;
+    animation: page-load ease 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 h1 {
-    font-family: neue-haas-grotesk-display, sans-serif;
+    font-family: 'DM Mono', monospace;
     font-size: 32px;
-    font-weight: 900;
-    color: black;
 }
 
 h2 {
@@ -35,13 +33,17 @@ p {
     letter-spacing: 0.03em;
 }
 
+ion-icon {
+    width: 32px;
+}
+
 .navbar {
     position: fixed;
     top:0;
     left:0;
     margin: auto;
     width: 100%;
-    z-index:69;
+    z-index:1;
 }
 
 nav {
@@ -50,9 +52,35 @@ nav {
     align-items: center;
     min-height: 100px;
     background-color: #FAFAFD;
-    font-family: neue-haas-grotesk-display, sans-serif;
+    opacity: 0.9;
 }
 
+.nav-hover-item {
+    position: relative;
+}
+
+.nav-hover-item::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    color: blue;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in;
+}
+
+.nav-hover-item:hover::after {
+    transform: scaleX(1);
+    color: blue;
+}
+
+.navbar-nav a:hover {
+    color:blue;
+    transition-duration: 0.4s;
+}
 
 .logo {
     max-height: 50px;
@@ -63,9 +91,12 @@ nav {
     justify-content: center;
 }
 
+
 .navbar-nav li {
+    font-family: 'DM Mono', monospace;
     list-style: none;
     margin-left: 30px;
+    z-index:100;
 }
 
 .navbar-nav a {
@@ -107,24 +138,46 @@ hr {
 }
 
 .bio {
-    margin-left: 50px;
     line-height: 180%;
     letter-spacing: 0.5px;
 }
 
-.bio h1 {
-    padding-bottom: 20px;
-}
-
-
 .intro {
     padding-top:200px;
+    display: grid;
+    place-content: center;
     text-align: center;
     height: 400px;
+    margin-bottom: 100px;
+}
+
+.intro  {
+    position: relative;
 }
 
 .intro h1 {
-    margin: 5px;
+    padding: 5px 0;
+}
+
+.intro ::before,
+.intro ::after {
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.intro ::before {
+    background: #FAFAFD;
+    animation: typewriter 3s ease forwards;
+}
+
+@keyframes typewriter {
+    to { 
+        top: 100%; 
+    }
 }
 
 .emoji {
@@ -133,18 +186,14 @@ hr {
 }
 
 .case-study {
-    height:350px;
-    width: 700px;
+    width: 100%;
     position: relative;
-    margin:0 auto;
-    margin-top: 100px;
+    z-index: 1;
 }
 
 .case-study img{
     width: 100%;
-    height: 100%;
-    border-radius: 25px;
-
+    display: block;
 }
 
 .case-study::after {
@@ -161,7 +210,6 @@ hr {
     top: 0;
     left: 0;
     opacity:0;
-    border-radius: 25px;
     transition: opacity 0.5s ease;
 }
 
@@ -176,15 +224,17 @@ hr {
 
 .caption {
     position:absolute;
-    top:90%;
-    right:5%;
+    top:10%;
+    left:5%;
     opacity: 0;
     transition: .5s;
+    z-index: 5;
 }
 
-.caption p {
+.caption h2 {
     font-family: neue-haas-grotesk-display, sans-serif;
-    font-size: 16px;
+    font-size: 34px;
+    font-weight: 600;
     color: white;
 }
 
@@ -200,7 +250,7 @@ hr {
 .intro-container {
     display: flex;
     justify-content: space-between;
-    margin: 80px 20%;
+    margin: 80px 15%;
 }
 
 .intro-container h2{
@@ -253,7 +303,7 @@ hr {
 }
 
 .problem {
-    margin: 0 20%;
+    margin: 0 15%;
 }
 
 .problem h2 {
@@ -286,7 +336,8 @@ hr {
 
 .use-cases {
     display: flex;
-    margin: 80px 0 0 0;
+    background-color: rgb(235, 239, 255);
+    padding: 80px 0;
 }
 
 .use-cases p {
@@ -304,19 +355,13 @@ hr {
     margin: 0 20px;
 }
 
-.content-holder {
-    height: 450px;
-    margin: 100px 0 0 0;
-    background-color: rgb(235, 239, 255);
-}
-
-.content-holder h2 {
-    padding: 50px 0 0 0;
+.holder h2 {
     text-align: center;
+    margin: 100px 0 30px 0;
 }
 
 .image-container {
-    margin: 100px 20% 0 20%;
+    margin: 100px 15% 0 15%;
 }
 
 .image-container h2 {
@@ -339,6 +384,32 @@ hr {
     margin: 10px 0 0 0;
 }
 
+.card-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 150px 0 0 0;
+}
+
+.card-wrapper .card {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
 .footer {
     width: 100%;
     height: 150px;
@@ -349,6 +420,8 @@ hr {
 
 .footer p {
     font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: -0.2px;
 }
 
 @media screen and (max-width:768px) {
@@ -367,12 +440,13 @@ hr {
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
+
     .navbar-nav li{
         opacity: 0;
-        margin-top: 20px;
+        margin-top: 50px;
         margin-left:0;
-
     }
+
     .burger {
         display: block;
         cursor: pointer;
@@ -382,6 +456,7 @@ hr {
     .intro {
         padding-top:150px;
         margin: 0 20px;
+        margin-bottom: 50px;
         height: 350px;
     }
 
@@ -393,14 +468,16 @@ hr {
         font-size: 20px;
     }
 
-    .case-study {
-        height: 100%;
-        width: 90%;
-        margin-top: 10px;
+    .case-study { 
+        width: 100%;
     }
 
     .caption {
         top:80%;
+    }
+
+    .caption h2 {
+        font-size: 18px;
     }
 
     .profile-photo {
@@ -410,26 +487,17 @@ hr {
         text-align: center;
     }
 
-    .bio {
-        margin: 15px 15px;
-        text-align: left;
-    }
-
-    .bio h1{
-        text-align: center;
-    }
-
-    .bio p {
-        font-size: 14px;
-    }
-
     .intro-container {
         display: block;
         margin: 60px 25px;
     }
     .details {
-        flex-basis: none;
-        margin: 10px 0 0 0;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 0 0;
+    }
+    .details-component {
+        flex-basis: 33%;
     }
 
     .details-component h3 {
@@ -438,6 +506,10 @@ hr {
 
     .details-component p {
         font-size: 10px;
+    }
+
+    #second {
+        margin: 0 30px 0 0;
     }
 
     .problem {
@@ -453,7 +525,8 @@ hr {
     }
 
     .use-cases img {
-        max-width: 80%;
+        max-width: 60%;
+        padding: 20px 0 0 0;
     }
 
     .use-cases p {
@@ -462,6 +535,10 @@ hr {
 
     .image-container {
         margin: 100px 25px 0 25px;
+    }
+
+    .image-container img {
+        padding: 50px 0 0 0;
     }
 }
 
