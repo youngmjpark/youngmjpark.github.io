@@ -6,12 +6,14 @@
         <link rel="icon" type="image.png" href="img/favicon.png"/>
         <link href="css/styles.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/yog5qxq.css">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <title>ymjp — about</title>
     </head>
     <body>
         <div class=navbar>
             <nav>
-                <img src="img/ecclogo.png" class="logo">
+                <a href="index.html"><img src="img/ecclogo.png" class="logo"></a>
                 <ul class="navbar-nav">
                     <li><a href="index.html" class="nav-hover-item">work</a></li>
                     <li><a href="about.html" class="nav-hover-item">about</a></li>
@@ -24,17 +26,43 @@
             </nav>
         </div>
         <section>
-            <div class="profile-photo">
-                <img src="img/profile.GIF">
-                <div class="bio">
-                    <h1>Hello, nice to meet you!</h1>
-                    <p>As you may already know, my name is Young Min but I also go by Julian. I am a product designer and currently looking for new roles. I have had the opportunity to apply human-centered design on a startup and small business products and bring better experiences for people. I received a B.S. degree in Cognitive Science and HCI from UC San Diego.
-                    <hr>
-                    <p>When I'm not designing, I'm spending time with friends doing happy hour, playing a game, listening to music, or reading a book.</p>
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="pfp">
+                        <img src="img/profile.GIF">
+                    </div>
+                    <div class="bio">
+                        <h1>Hello, nice to meet you!</h1>
+                        <p>Let's chat, would love to hear from you.</p>
+                        <div class="reach">
+                            <a href="mailto:youngmjpark@gmail.com" target="blank_"><ion-icon name="mail" size="large"></ion-icon></a>
+                            <p>youngmjpark@gmail.com</p>
+                        </div>
+                        <div class="resume">
+                            <a href="YoungMin_Resume.pdf" target="blank_">Resume</a>
+                        </div>
+                    </div>.
                 </div>
             </div>
         </section>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <div class="footer">
+            <div>
+                <p>Made by Young Min Julian Park © 2021</p>
+            </div>
+            <div>
+                <ion-icon name="logo-twitter" size="small"></ion-icon>
+                <ion-icon name="logo-instagram"size="small"></ion-icon>
+                <ion-icon name="logo-linkedin" size="small"></ion-icon>
+            </div>
+        </div>
         <script src="js/hello.js"></script>
+        <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+        <script type="text/javascript">
+            VanillaTilt.init(document.querySelector(".card-wrapper"), {
+                max: 25,
+                speed: 400
+            });
+            VanillaTilt.init(document.querySelectorAll(".card-wrapper"));
+        </script>
     </body>
 </html>
