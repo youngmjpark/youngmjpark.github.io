@@ -3,62 +3,145 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image.png" href="img/favicon.png"/>
         <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.typekit.net/yog5qxq.css">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <title>young min julian park</title>
     </head>
-    <body class="hello">
-        <div class="navbar">
-            <nav>
-                <a href="index.html"><img src="img/ecclogo.png" class="logo"></a>
-                <ul class="navbar-nav">
-                    <li><a href="index.html" class="nav-hover-item">work</a></li>
-                    <li><a href="about.html" class="nav-hover-item">about</a></li>
-                </ul>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+    <body>
+        <!--header-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html" class="nav_logo">ymjp.</a>
+
+                <div class="nav_menu" id="nav-menu">
+                    <ul class="nav_list grid">
+                        <li class="nav_item active-link">
+                            <a href="index.html" class="nav_link">
+                                work
+                                <i class="uil uil-layers-alt nav_icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="about.html" class="nav_link">
+                                about
+                                <i class="uil uil-head-side nav_icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <i class="uil uil-times-circle nav_close" id="nav-close"></i>
+                </div>
+
+                <div class="nav_btns">
+                    <i class="uil uil-moon mode" id="theme-button"></i>
+
+                    <div class="nav_toggle" id="nav-toggle">
+                        <i class="uil uil-dice-two nav_icon"></i>
+                    </div>
                 </div>
             </nav>
-        </div>
-        <div class="intro">
-                <h1 id="changeText">Hello!</h1>
-                <h1>My name is Young Min,</h1>
-                <h1>I design better experiences for people.</h1>
-                <div class="emoji">👌</div>
-        </div>
-        <section>
-        <a href="https://toastdating.co" target="blank_">
-                <div class="case-study">
-                    <img src="img/toast.png">
-                    <div class="caption">
-                        <h2>Toast Dating</h2>
+        </header>
+
+        <!--content-->
+        <content class="content">
+            <!--introduction-->
+            <section class="intro section" id="intro">
+                <div class="intro_container container grid">
+                    <div class="intro_content grid">
+                        <div class="intro_words">
+                            <h1 class="intro_title" id="changeText">hello</h1>
+                            <br>
+                            <p class="intro_description">I'm Young Min.</p>
+                            <p class="intro_description">I design better experiences for people.</p>
+                        </div>
+                        
+                        <div class="intro_wink">
+                            <i class="uil uil-smile-wink"></i>
+                        </div>
+
+                        <div class="intro_scroll">
+                            <a href="about.html" class="intro_arrow-up-right-button button-flex">
+                                More about me
+                                <i class="uil uil-arrow-up-right intro_arrow-up-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-        </a>
-        <a href="mci.html">
-                <div class="case-study">
-                    <img src="img/banner.png">
-                    <div class="caption">
-                        <h2>Megabuck Carwash Inc.</h2>
+            </section>
+
+            <!--work-->
+            <section class="work section" id="work">
+                <div class="work_container container grid">
+                    <h1 class="work_name">Work</h1>
+
+                        <div>
+                            <div class="work_content work_close">
+                                <div class="work_header">
+                                    <div>
+                                        <h1 class="work_title">Toast Dating</h1>
+                                    </div>
+
+                                    <i class="uil uil-angle-down work_arrow"></i>
+                                </div>
+
+                                <div class="work_list grid">
+                                    <div class="work_data">    
+                                        <h3 class="work_description">Currently working, email me if ya want to know more.</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="work_content work_close">
+                                <div class="work_header">
+                                    <div>
+                                        <h1 class="work_title">Megabuck Carwash Inc.</h1>
+                                    </div>
+
+                                    <i class="uil uil-angle-down work_arrow"></i>
+                                </div>
+
+                                <div class="work_list grid">
+                                    <div class="work_data">
+                                        <a href="mci.html"><h3 class="work_description">View project.</h3></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-        </a>
-        <div class="footer">
-            <div>
-                <p>Made by Young Min Julian Park © 2021</p>
+            </section>
+        </content>
+
+        <!--footer-->
+        <footer class="footer">
+            <div class="footer_bg">
+                <div class="footer_container container grid">
+                    <div>
+                        <h1 class="footer_title">Stay in touch.</h1>
+                        <span class="footer_subtitle">I am currently looking for full-time opportunities in UX & Product Design.</span>
+                    </div>
+
+                    <ul class="footer_socials">
+                        <li>
+                            <a href="#" class="footer_social">
+                                <i class="uil uil-twitter-alt"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/youngmjpark/" class="footer_social" target="_blank">
+                                <i class="uil uil-linkedin-alt"></i>
+                            </a>
+                            <a href="#" class="footer_social">
+                                <i class="uil uil-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p class="footer_copy">&#169; young min julian park 2021.</p>
+                </div>
+
             </div>
-            <div>
-                <ion-icon name="logo-twitter" size="small"></ion-icon>
-                <ion-icon name="logo-instagram"size="small"></ion-icon>
-                <ion-icon name="logo-linkedin" size="small"></ion-icon>
-            </div>
-        </div>
-        </section>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        </footer>
         <script src="js/hello.js"></script>
+        </script>
     </body>
 </html>
